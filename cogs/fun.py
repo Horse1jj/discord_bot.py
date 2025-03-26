@@ -282,18 +282,38 @@ class Fun_Commands(commands.Cog):
             return await msg.edit(content=f"> {result}\nCongrats, you won 🎉!")
         await msg.edit(content=f"> {result}\nBetter luck next time")
 
+  import random
+from discord.ext import commands
+
+class Fun(commands.Cog):
     @commands.command()
-    async def randomfact(self, ctx: CustomContext):
+    async def randomfact(self, ctx):
         """Sends a random fun fact."""
         facts = [
             "Honey never spoils.",
             "A day on Venus is longer than a year on Venus.",
             "Octopuses have three hearts.",
             "Bananas are berries, but strawberries aren't.",
-            "A group of flamingos is called a 'flamboyance'."
+            "A group of flamingos is called a 'flamboyance'.",
+            "Water can boil and freeze at the same time, called the 'triple point'.",
+            "Sharks have been around longer than trees.",
+            "Wombat poop is cube-shaped.",
+            "There's an island in Japan full of friendly bunnies called Okunoshima.",
+            "A single strand of spaghetti is called a 'spaghetto'.",
+            "Cows have best friends and get stressed when separated.",
+            "The Eiffel Tower can grow over 6 inches in the summer due to heat expansion.",
+            "Sea otters hold hands while sleeping to keep from drifting apart.",
+            "There's a species of jellyfish that can technically live forever.",
+            "Butterflies can taste with their feet.",
+            "Sloths can hold their breath longer than dolphins by slowing their heart rate.",
+            "Pineapples take about two years to grow.",
+            "Some turtles can breathe through their butts.",
+            "The M's in M&M's stand for 'Mars' and 'Murrie', the founders.",
+            "A bolt of lightning is five times hotter than the surface of the sun."
         ]
         fact = random.choice(facts)
         await ctx.send(f"🧠 Fun Fact: {fact}")
+
 
 
 async def setup(bot):
